@@ -102,11 +102,28 @@ public class StudentManager_gui extends JFrame {
         table.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 int row = table.getSelectedRow();
+<<<<<<< HEAD
                 nameField.setText((String) table.getValueAt(row, 0));
                 genderField.setText((String) table.getValueAt(row, 1));
                 ageField.setText((String) table.getValueAt(row, 2));
                 idField.setText((String) table.getValueAt(row, 3));
 
+=======
+//                6.3是否对有异常抛出的方法都执行了try...catch保护？
+//                nameField.setText((String) table.getValueAt(row, 0));
+//                genderField.setText((String) table.getValueAt(row, 1));
+//                ageField.setText((String) table.getValueAt(row, 2));
+//                idField.setText((String) table.getValueAt(row, 3));
+                try {
+                    nameField.setText((String) table.getValueAt(row, 0));
+                    genderField.setText((String) table.getValueAt(row, 1));
+                    ageField.setText((String) table.getValueAt(row, 2));
+                    idField.setText((String) table.getValueAt(row, 3));
+                }catch (Exception e1){
+                    System.out.println("出现异常了...");
+                    e1.printStackTrace();
+                }
+>>>>>>> first correct
                 tmp = getInput();
             }
         });
@@ -124,7 +141,18 @@ public class StudentManager_gui extends JFrame {
         stu.name = nameField.getText();
         stu.gender = Boolean.parseBoolean(genderField.getText());
         stu.age = ageField.getText();
+<<<<<<< HEAD
         stu.ID = Integer.parseInt(idField.getText());
+=======
+//        6.3是否对有异常抛出的方法都执行了try...catch保护？
+//        stu.ID = Integer.parseInt(idField.getText());
+        try{
+            stu.ID = Integer.parseInt(idField.getText());
+        }catch(Exception e2){
+            System.out.println("出现异常了...");
+            e2.printStackTrace();
+        }
+>>>>>>> first correct
 //        stu.setName(nameField.getText());
 //        stu.setID(Integer.parseInt(idField.getText()));
 //        stu.setBirDate(ageField.getText());
